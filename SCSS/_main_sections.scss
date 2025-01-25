@@ -110,11 +110,13 @@
   }
   .one-block,
   .two-block {
+    margin-inline: 10px;
     display: flex;
     gap: 10px;
     @media (max-width: 870px) {
       gap: 5px;
       flex-direction: column;
+      margin-inline: 0px;
     }
   }
   .one-block {
