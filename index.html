@@ -258,7 +258,11 @@
     <div class="feed-back">
         <div class="main">
             <img id="close-feed" class="close" src="./assets/img/close.svg" alt="">
-            <h2>Зв’яжіться з нами</h2>
+            <h2>Зв’яжіться з нами
+                <p class="sub-title">
+                    Ми боремося за свободу та незалежність України, аби забезпечити світле майбутнє для ниших дітей.
+                </p>
+            </h2>
             <div class="block">
                 <div class="left-block">
                     <p>
@@ -342,25 +346,27 @@
                         </div>
                     </div>
                 </div>
-                <form action="" class="right">
-                    <input placeholder="Скільки вам років" required type="text">
-                    <input placeholder="Ваш номер телефону" required type="text">
-                    <input placeholder="Нік в Telegram " required type="text">
-                    <input placeholder="Ваше ім’я" required type="text">
-                    <input placeholder="По батькові" required type="text">
-                    <input placeholder="Прізвище" required type="text">
+                <form  action="./process_form.php" method="post" class="right">
+                    <input name="age" placeholder="Скільки вам років" required type="text">
+                    <input name="phone" placeholder="Ваш номер телефону" required type="text">
+                    <input name="telegram" placeholder="Нік в Telegram " required type="text">
+                    <input name="first_name" placeholder="Ваше ім’я" required type="text">
+                    <input name="middle_name" placeholder="По батькові" required type="text">
+                    <input name="last_name" placeholder="Прізвище" required type="text">
 
                     <p style="margin-block: 30px;">Чи являєтеся діючим військовослужбовцем?</p>
 
-                    <div style="margin-bottom: 10px;" class="radio-group">
-                        <input type="radio" id="dewey" name="varriro" value="Так" />
+                   <div class="radrio-block">
+                    <div class="radio-group frst">
+                        <input type="radio" id="dewey" name="military" value="Так" />
                         <label for="dewey">Так</label>
                     </div>
                     <div class="radio-group">
-                        <input type="radio" id="huey" name="varriro" value="Ні" checked />
+                        <input type="radio" id="huey" name="military" value="Ні" checked />
                         <label for="huey">Ні</label>
                     </div>
-                    <button type="submit">Відправити</button>
+                   </div>
+                    <button style="width: 100%;" type="submit">Відправити</button>
                 </form>
             </div>
         </div>

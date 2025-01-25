@@ -24,11 +24,11 @@
   h2,
   h3 {
     text-align: center;
+    font-weight: 500;
   }
   h2 {
     font-size: clamp(2.188rem, 8.681vw - 1.979rem, 8.438rem);
     color: white;
-    font-weight: 800;
   }
   h3 {
     color: #ef9f6a;
@@ -151,8 +151,8 @@
             width: 200px;
             padding-block: 14px;
             font-size: 24px;
-            
-          }.go-it {
+          }
+          .go-it {
             margin-right: 50px;
             @media (max-width: 765px) {
               margin-right: 6px;
@@ -291,7 +291,7 @@
     border-radius: 10px;
     background: rgba(23, 22, 22, 0.8);
     @media (max-width: 870px) {
-      padding: 20px;
+      padding: 5px;
       padding-top: 60px;
     }
     backdrop-filter: blur(2px);
@@ -302,6 +302,23 @@
       font-weight: 800;
       font-size: clamp(1.7rem, 1.014vw + 1.596rem, 2.813rem);
       margin-bottom: 30px;
+      p {
+        display: none;
+      }
+      @media (max-width: 870px) {
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        p {
+          display: block;
+          max-width: 294px;
+          text-align: justify;
+          font-weight: 400;
+          font-size: 14px;
+        }
+      }
     }
     .block {
       height: 100%;
@@ -320,10 +337,41 @@
           all: unset;
           padding: 19px 30px;
           border-bottom: 1px solid #fff;
+          @media (max-width: 870px) {
+            font-size: 12px;
+          }
+        }
+        @media (max-width: 870px) {
+          display: flex;
+          align-items: stretch;
+          justify-content: center;
+          p {
+            text-align: center;
+            font-size: 12px;
+          }
+        }
+        .radrio-block {
+          display: flex;
+          flex-direction: column;
+          @media (max-width: 870px) {
+            flex-direction: row;
+
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            .radio-group {
+              &.frst {
+                margin-bottom: 0px;
+              }
+            }
+          }
         }
         .radio-group {
           display: flex;
           gap: 5px;
+          &.frst {
+            margin-bottom: 10px;
+          }
         }
         button {
           color: white;
@@ -331,6 +379,10 @@
           background: #006cdb;
           padding-block: 13px;
           margin-top: 25px;
+          font-size: 24px;
+          @media (max-width: 870px) {
+            font-size: 17px;
+          }
         }
         input[type="radio"] {
           appearance: none; /* Убираем стандартное оформление */
@@ -358,21 +410,36 @@
         p {
           margin-bottom: clamp(3.125rem, 4.054vw + 2.01rem, 6.875rem);
           font-size: clamp(0.875rem, 0.405vw + 0.764rem, 1.25rem);
+          @media (max-width: 870px) {
+            display: none;
+          }
         }
         .contact {
           font-size: clamp(0.875rem, 0.405vw + 0.764rem, 1.25rem);
+          @media (max-width: 870px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
           h3 {
             margin-bottom: 10px;
+            @media (max-width: 870px){
+           
+              margin-bottom: 20px;
+            
+            }
           }
           & > a,
           .socials {
             display: inline-block;
-            margin-bottom: clamp(0.938rem, 0.676vw + 0.752rem, 1.563rem);
+            margin-bottom: 20px;
+           
           }
           .socials {
             display: flex;
             align-items: center;
             gap: 20px;
+
             a {
               svg {
                 width: 30px;
@@ -395,6 +462,10 @@
       position: absolute;
       top: 30px;
       right: 30px;
+      @media (max-width: 870px) {
+        top: 14px;
+        right: 14px;
+      }
     }
   }
 }
