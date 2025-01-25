@@ -55,7 +55,7 @@ videos.forEach((video) => {
   title.innerText = video.title;
 
   const logo = document.createElement("img");
-  logo.src = "/assets/img/yt_logo.png";
+  logo.src = "./assets/img/yt_logo.png";
   logo.width = 50;
   logo.alt = "YouTube logo";
 

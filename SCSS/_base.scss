@@ -11,7 +11,7 @@ a{
     text-decoration: none;
     color: inherit;
 }
-body:has(.burger-menu.active,.feed-back.active){
+body:has(.burger-menu.active,.feed-back.active,.details-info.active){
 overflow: hidden;
 }
 button, input {

@@ -45,6 +45,7 @@
     .item {
       img {
         width: 90%;
+        max-height: none !important;
       }
     }
   }
@@ -55,7 +56,7 @@
     align-items: center;
     padding-block: 40px;
     img {
-      //   max-height: clamp(14.375rem, 2.027vw + 13.818rem, 16.25rem);
+      max-height: 300px;
       margin-bottom: clamp(1.938rem, -0.405vw + 2.049rem, 1.563rem);
     }
     p {
@@ -146,6 +147,7 @@
       background-color: #000;
       color: white;
       img {
+        max-height: none;
         width: clamp(16.25rem, 24.189vw + 9.598rem, 38.625rem);
       }
     }
@@ -153,6 +155,7 @@
       color: white;
       background: linear-gradient(180deg, #00094d51 0%, #fff 100%);
       img {
+        max-height: none;
         width: clamp(16.25rem, 24.189vw + 9.598rem, 38.625rem);
       }
     }
@@ -233,8 +236,8 @@
 .info-polk {
   margin-top: 20px;
   background-color: #d9d9d9;
-  border-top: 2px solid;
-  border-bottom: 2px solid;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
   padding: clamp(0.625rem, 4.054vw - 0.49rem, 4.375rem)
     clamp(1.688rem, 11.689vw - 1.527rem, 12.5rem);
   font-size: clamp(0.688rem, 0.608vw + 0.52rem, 1.25rem);
@@ -269,9 +272,8 @@
     border-radius: 10px;
     background: rgba(23, 22, 22, 0.8);
     @media (max-width: 870px) {
-        padding: 20px;
-        padding-top: 60px;
-
+      padding: 20px;
+      padding-top: 60px;
     }
     backdrop-filter: blur(2px);
     & > h2 {
@@ -376,4 +378,45 @@
       right: 30px;
     }
   }
+}
+
+.details-info {
+    transform: rotateX(90deg);
+    transition: 0.3s;
+    position: fixed;
+    z-index: 11;
+    background: rgba(43, 42, 42, 0.7);
+    inset: 0;
+    padding: clamp(1.563rem, 3.716vw + 0.541rem, 5rem);
+    padding-inline: clamp(1.563rem, 28.716vw - 6.334rem, 28.125rem);
+    @media (max-width: 870px) {
+      overflow-y: scroll;
+    }
+    &.active {
+        transform: rotateX(0deg);
+      }
+    .info_p{
+        padding: 60px;
+        color: white;
+        position: relative;
+        width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+        border-radius: 10px;
+        background: rgba(23, 22, 22, 0.8);
+        img{
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            cursor: pointer;
+        }
+        @media (max-width: 870px) {
+          padding: 20px;
+          padding-top: 60px;
+        }
+        font-size: clamp(0.875rem, 0.203vw + 0.819rem, 1.063rem);
+        span{
+            font-size: clamp(1rem, 0.27vw + 0.926rem, 1.25rem);
+        }
+    }
 }

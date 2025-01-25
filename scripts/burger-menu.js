@@ -1,16 +1,26 @@
 const burger = document.getElementById("burger");
 const nav = document.querySelector(".header__navigation");
+const navitem = document.querySelectorAll(".nav__item");
 const header = document.querySelector("#header");
 
 if (window.innerWidth <= 1065) {
   nav.style.marginTop = header.offsetHeight + "px";
 }
 
+navitem.forEach(e=>{
+  e.addEventListener('click',()=>{
+    burger.classList.remove("active");
+    nav.classList.remove("active");
+    header.classList.remove("active");
+  })
+})
 burger.addEventListener("click", () => {
   burger.classList.toggle("active");
   nav.classList.toggle("active");
   header.classList.toggle("active");
 });
+
+
 
 const swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
