@@ -1,0 +1,124 @@
+.header {
+  background-color: #0e0e0e4d;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  padding: 10px 80px;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  transition: .2s;
+  &.active {
+    background: rgba(0, 0, 0, 0.9);
+  }
+  @media (max-width: 1270px) {
+    padding: 14px 24px;
+  }
+
+  &__logo {
+    font-size: clamp(1.063rem, 0.878vw + 0.821rem, 1.875rem);
+  }
+  &__navigation {
+    display: flex;
+    gap: 60px;
+    transition: 0.3s;
+    @media (max-width: 1065px) {
+      position: fixed;
+      margin-top: 64px;
+      inset: 0;
+      top: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 80px !important;
+      background: rgba(0, 0, 0, 0.9);
+      opacity: 0;
+      pointer-events: none;
+
+      &.active {
+        top: 0;
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+    a {
+      font-size: 20px;
+      &:hover {
+        text-decoration: underline;
+      }
+      &:active {
+        color: #ffb400;
+      }
+    }
+    @media (max-width: 1420px) {
+      gap: 30px;
+    }
+    @media (max-width: 1270px) {
+      gap: 20px;
+    }
+  }
+  .action-button {
+    @media (max-width: 1270px) {
+      width: 200px;
+    }
+    @media (max-width: 1065px) {
+      display: none;
+    }
+  }
+}
+
+.burger-menu {
+  display: none;
+  position: relative;
+  width: 27px;
+  height: 20px;
+  cursor: pointer;
+  &.active::after {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  &.active::before {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+  }
+
+  &.active .middle-line {
+    left: 100%;
+    opacity: 0;
+  }
+  &::after,
+  &::before {
+    content: "";
+    transform-origin: center;
+  }
+  &::after {
+    top: 0;
+  }
+  &::before {
+    bottom: 0;
+  }
+  &.middle-line {
+    top: 50%;
+    background-color: transparent;
+    transform: translateY(-50%);
+  }
+  &::before,
+  &::after,
+  .middle-line {
+    background-color: white;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    transition: 0.3s;
+  }
+}
+@media (max-width: 1065px) {
+  .burger-menu {
+    display: block;
+  }
+}
