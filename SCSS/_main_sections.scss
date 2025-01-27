@@ -333,13 +333,24 @@
       form {
         display: flex;
         flex-direction: column;
-        input[type="text"] {
+        input[type="text"], input[type="number"] {
           all: unset;
           padding: 19px 30px;
           border-bottom: 1px solid #fff;
           @media (max-width: 870px) {
             font-size: 12px;
           }
+        }input[type="number"] {
+          -moz-appearance: textfield; /* Firefox */
+          -webkit-appearance: none; /* Chrome, Safari */
+          appearance: none; /* Современные браузеры */
+        }
+        
+        /* Для Safari */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
         }
         @media (max-width: 870px) {
           display: flex;
